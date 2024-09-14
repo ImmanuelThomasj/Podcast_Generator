@@ -1,6 +1,7 @@
 name: "Custom Podcast Generator"
 author: "Thomas"
 description: "Generates and updates podcast feed from a YAML file, commits changes, and pushes to the repository."
+color: red
 
 runs:
   using: "docker"
