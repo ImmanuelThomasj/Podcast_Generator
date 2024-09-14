@@ -1,16 +1,17 @@
-FROM ubuntu:latest
+FROM python:3.12-slim
 
-# Update and install dependencies
+# Install necessary packages
 RUN apt-get update && apt-get install -y \
-    python3.10 \
-    python3-pip \
     git \
     && apt-get clean
 
 # Install PyYAML using pip
-RUN pip3 install --upgrade pip \
-    && pip3 install PyYAML
+RUN pip install --upgrade pip \
+    && pip install PyYAML
 
+# Copy the necessary files
 COPY feed.py /usr/bin/feed.py
 COPY entrypoint.sh /entrypoint.sh
+
+# Set the entrypoint
 ENTRYPOINT ["/entrypoint.sh"]
