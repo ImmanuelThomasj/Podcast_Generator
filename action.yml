@@ -1,6 +1,7 @@
 name: "Custom Podcast Generator"
 author: "Thomas"
-DESCRIPTION: "Geneartes a feed for a podcast from a YAML file"
+DESCRIPTION: "Generates and updates podcast feed from a YAML file, commits changes, and pushes to the repository."
+
 runs:
   using: "docker"
   image: "Dockerfile"
